@@ -21,13 +21,7 @@ public class StrongPasswordValidator implements ConstraintValidator<StrongPasswo
 
     @Override
     public void initialize(StrongPassword constraintAnnotation) {
-        minField = constraintAnnotation.minField();
-        maxField = constraintAnnotation.maxField();
-        hasUpperField = constraintAnnotation.hasUpperField();
-        hasLowerField = constraintAnnotation.hasLowerField();
-        hasNumberField = constraintAnnotation.hasNumberField();
-        hasAlphaField = constraintAnnotation.hasAlphaField();
-        hasOthersField = constraintAnnotation.hasOthersField();
+
         passwordField = constraintAnnotation.passwordField();
 
 
@@ -47,7 +41,7 @@ public class StrongPasswordValidator implements ConstraintValidator<StrongPasswo
         Pattern LowerCasePattern = Pattern.compile("[a-z]");
         Pattern NumberCasePattern = Pattern.compile("[1234567890]");
         Pattern AlphaCasePattern = Pattern.compile("[abcdefghijklmnñopqrstuwvxyzABCDEFGHIJKLMNÑOPQRSTUWZYZ]");
-        Pattern OthersCasePattern = Pattern.compile("[.,$-_]");
+        Pattern OthersCasePattern = Pattern.compile("[^a-z0-9]", Pattern.CASE_INSENSITIVE);
 
         if ((password.length() >= min && password.length() <= max)
                 && (hasLower == true && LowerCasePattern.matcher(password).find() || (hasLower == false))
