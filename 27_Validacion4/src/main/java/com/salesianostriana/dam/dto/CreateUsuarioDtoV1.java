@@ -13,8 +13,8 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @NoArgsConstructor @AllArgsConstructor
 @PasswordsMatch(passwordField = "password", verifyPasswordField = "verifyPassword", message = "{usuario.password.notmatch}")
-@StrongPassword(passwordField = "password", minField = "1", maxField = "5", hasLowerField = "false",
-hasUpperField = "false", hasAlphaField = "false", hasNumberField = "false", hasOthersField = "false")
+@StrongPassword(passwordField = "password", minField = "", maxField = "", hasLowerField = "",
+hasUpperField = "", hasAlphaField = "", hasNumberField = "", hasOthersField = "")
 public class CreateUsuarioDtoV1 {
 
     private String login;
