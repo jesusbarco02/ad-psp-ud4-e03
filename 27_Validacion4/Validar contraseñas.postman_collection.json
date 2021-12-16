@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "02883d59-3ef9-42d3-9218-cb7094381949",
+		"name": "Validar contraseñas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"barco\",\r\n    \"email\": \"barco@gmail.com\",\r\n    \"password\": \"aA.1\",\r\n    \"verifyPassword\": \"aA.1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
